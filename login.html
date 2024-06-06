@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="column" id="left-column"></div>
+
+<div class="content">
+  <img src="GBAL Title.png" alt="Title Image" class="main">
+  <div id="rcorners2">
+    <h1 style="margin-top:10px; margin-bottom:6px;">Username</h1>
+    <input style="width:95%; margin-bottom:10px;" type="text" name="Username" placeholder="Username" size="35" required>
+    <h1 style="margin-top:10px; margin-bottom:6px;">Password</h1>
+    <input style="width:95%; margin-bottom:10px;" type="text" name="Password" placeholder="Password" size="35" required>
+    <button id="wrapper"><span class="background"></span>Login</button>
+  </div>
+</div>
+
+<div class="column" id="right-column"></div>
+
+<script>
+  // Funzione per creare un'immagine cadente
+  function createFallingImage(container) {
+    const img = document.createElement('img');
+    img.src = 'Quest Icon.png'; // Percorso all'immagine piccola
+    img.className = 'falling-image';
+    img.style.left = Math.random() * 100 + '%';
+    img.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Durata casuale tra 2 e 5 secondi
+    container.appendChild(img);
+
+    // Rimuove l'immagine dopo che l'animazione è completata
+    img.addEventListener('animationend', () => {
+      container.removeChild(img);
+    });
+  }
+
+  // Genera continuamente immagini cadenti
+  function generateFallingImages(container) {
+    setInterval(() => {
+      createFallingImage(container);
+    }, 500); // Genera una nuova immagine ogni 500 ms
+  }
+
+  // Avvia la generazione delle immagini cadenti per entrambe le colonne
+  document.addEventListener('DOMContentLoaded', () => {
+    generateFallingImages(document.getElementById('left-column'));
+    generateFallingImages(document.getElementById('right-column'));
+  });
+</script>
+
+  <script src="login.js"></script>
+</body>
+</html>
