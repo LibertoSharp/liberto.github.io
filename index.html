@@ -54,6 +54,14 @@
     generateFallingImages(document.getElementById('left-column'));
     generateFallingImages(document.getElementById('right-column'));
   });
+
+  function attivaScritta() {
+      var scritta = document.getElementById('testo');
+      scritta.classList.add('attiva');
+      setTimeout(function(){
+        scritta.classList.remove('attiva');
+      }, 1000);
+    }
 </script>
 
   <script src="login.js"></script>

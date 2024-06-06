@@ -26,5 +26,13 @@ function caricaPagina(nome) {
   window.location.href = nome+".html";
 }
 
+function attivaScritta() {
+  var scritta = document.getElementById('testo');
+  scritta.classList.add('attiva');
+  setTimeout(function(){
+    scritta.classList.remove('attiva');
+  }, 1000);
+}
+
 // Aggiunge un gestore per l'evento click al bottone di login
 document.getElementById('wrapper').addEventListener('click', checkCredentials);
