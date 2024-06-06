@@ -155,7 +155,7 @@ img.main {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 844) {
   .column {
     display: none; /* Nasconde le colonne su schermi piccoli */
   }
