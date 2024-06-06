@@ -15,11 +15,26 @@ function checkCredentials() {
       if (data.password !== password) {
         throw new Error('Password errata');
       }
-      alert('Login riuscito');
+      caricaPagina("main");
     })
     .catch(error => {
       alert(error.message);
     });
+}
+
+function caricaPagina(nome) {
+  // Effettua una richiesta AJAX per ottenere il contenuto di pagina2.html
+  $.ajax({
+      url: nome + '.html',
+      type: 'GET',
+      success: function(data) {
+          // Inserisci il contenuto di pagina2.html all'interno dell'elemento con id "content"
+          $('#content').html(data);
+      },
+      error: function(xhr, status, error) {
+          console.error('Errore durante il caricamento della pagina:', error);
+      }
+  });
 }
 
 // Aggiunge un gestore per l'evento click al bottone di login
