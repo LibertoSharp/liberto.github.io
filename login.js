@@ -3,6 +3,11 @@ function checkCredentials() {
   var username = document.querySelector('input[name="Username"]').value;
   var password = document.querySelector('input[name="Password"]').value;
 
+  if (username == "") {
+    attivaScritta("Credenziali Invalide");
+    return;
+  }
+
   // Carica il file JSON corrispondente all'username
   fetch(username + '.json')
     .then(response => {
@@ -28,6 +33,7 @@ function caricaPagina(nome) {
 }
 
 function attivaScritta(msg) {
+  clearTimeout();
   var scritta = document.getElementById('testo');
   scritta.classList.add('attiva');
   scritta.textContent = msg;
