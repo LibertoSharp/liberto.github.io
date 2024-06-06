@@ -192,7 +192,7 @@ img.main {
 .attiva {
   opacity: 1;
   animation-name: ErrorText;
-  animation-duration: 1s;
+  animation-duration: 4s;
 }
 
 @keyframes ErrorText {

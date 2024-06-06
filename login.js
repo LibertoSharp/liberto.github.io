@@ -7,18 +7,19 @@ function checkCredentials() {
   fetch(username + '.json')
     .then(response => {
       if (!response.ok) {
-        attivaScritta();
+        attivaScritta("Username non trovato");
       }
       return response.json();
     })
     .then(data => {
       if (data.password !== password) {
-        throw new Error('Password errata');
+        attivaScritta("Password Errata");
+        return;
       }
       caricaPagina("main");
     })
     .catch(error => {
-      alert(error.message);
+      attivaScritta(error.message);
     });
 }
 
@@ -26,12 +27,13 @@ function caricaPagina(nome) {
   window.location.href = nome+".html";
 }
 
-function attivaScritta() {
+function attivaScritta(msg) {
   var scritta = document.getElementById('testo');
   scritta.classList.add('attiva');
+  scritta.textContent = msg;
   setTimeout(function(){
     scritta.classList.remove('attiva');
-  }, 1000);
+  }, 4000);
 }
 
 // Aggiunge un gestore per l'evento click al bottone di login
