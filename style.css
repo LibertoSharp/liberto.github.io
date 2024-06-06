@@ -181,3 +181,14 @@ img.main {
     width: 100%;
   }
 }
+
+.scritta {
+  color: red;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  margin: 0 0;
+}
+
+.attiva {
+  opacity: 1;
+}

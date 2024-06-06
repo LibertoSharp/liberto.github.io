@@ -7,7 +7,7 @@ function checkCredentials() {
   fetch(username + '.json')
     .then(response => {
       if (!response.ok) {
-        throw new Error('Username non trovato');
+        attivaScritta();
       }
       return response.json();
     })
