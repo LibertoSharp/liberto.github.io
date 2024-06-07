@@ -149,12 +149,14 @@ img.main {
 
 @keyframes fall {
   0% {
+    transform: rotate(0deg);
     top: -20px;
     opacity: 1;
   }
   100% {
     top: 100%;
     opacity: 0;
+    transform: rotate(90deg);
   }
 }
 
