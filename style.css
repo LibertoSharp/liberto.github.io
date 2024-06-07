@@ -4,6 +4,8 @@ body {
   display: flex;
   height: 100vh;
   overflow: hidden; /* Impedisce lo scorrimento della pagina */
+  cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/black-amp-purple-stroke-gradient-animated/black-purple-stroke-gradient-animated-cursor-7-32x32.png), auto;
+
 }
 
 @font-face {
@@ -80,6 +82,7 @@ button:hover {
   transform: scale(1.1);
   transition-duration: 0.3s;
   color: black;
+  cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/black-purple-stroke-gradient-animated/black-purple-stroke-gradient-animated-pointer-32x32.png), auto;
 }
 
 button:not(:hover) {
