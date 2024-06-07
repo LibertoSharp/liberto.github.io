@@ -21,6 +21,8 @@ function checkCredentials() {
         attivaScritta("Password Errata");
         return;
       }
+      setCookie("Username", username, 60);
+      setCookie("Password", password, 60);
       caricaPagina("main");
     })
     .catch(error => {
@@ -28,7 +30,7 @@ function checkCredentials() {
     });
 }
 
-function checkCredentials(username, password) {
+function checkCredentialsAUTO(username, password) {
   if (username == "") {
     attivaScritta("Credenziali Invalide");
     return;
@@ -98,4 +100,4 @@ username = getCookie("Username");
 password = getCookie("Password");
 
 if (username !== "" && password !== "")
-  checkCredentials(username, password);
+  checkCredentialsAUTO(username, password);
