@@ -26,10 +26,10 @@ function LevelFromEXP(exp) {
     return (25 * Math.log((exp + 750) / 750) / Math.log(2.7182818) / Math.log(2.7182818));
 }
 
-async function getFieldValueFromJSON(fieldName) {
+function getFieldValueFromJSON(fieldName) {
     try {
         // Effettua una richiesta per ottenere il file JSON
-        const response = await fetch("users/" + username + ".json");
+        const response = fetch("users/" + username + ".json");
 
         // Controlla se la richiesta ha avuto successo
         if (!response.ok) {
@@ -37,7 +37,7 @@ async function getFieldValueFromJSON(fieldName) {
         }
 
         // Estrai i dati JSON dalla risposta
-        const jsonData = await response.json();
+        const jsonData = response.json();
 
         // Verifica se il campo richiesto esiste nel JSON
         if (fieldName in jsonData) {
@@ -52,8 +52,9 @@ async function getFieldValueFromJSON(fieldName) {
     }
 }
 
-var EXP = await getFieldValueFromJSON("EXP");
+var EXP = getFieldValueFromJSON("EXP");
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
 document.getElementById('exptext').textContent = EXP;
+//document.getElementById('exptext').style.width = 
