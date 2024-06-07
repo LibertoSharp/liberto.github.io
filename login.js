@@ -9,7 +9,7 @@ function checkCredentials() {
   }
 
   // Carica il file JSON corrispondente all'username
-  fetch(username + '.json')
+  fetch("users/" + username + '.json')
     .then(response => {
       if (!response.ok) {
         attivaScritta("Username non trovato");
@@ -37,7 +37,7 @@ function checkCredentialsAUTO(username, password) {
   }
 
   // Carica il file JSON corrispondente all'username
-  fetch(username + '.json')
+  fetch("users/" + username + '.json')
     .then(response => {
       if (!response.ok) {
         attivaScritta("Username non trovato");
