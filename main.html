@@ -3,6 +3,8 @@
 
 
 <head>
+    <title>GBAL 2</title>
+    <link rel="icon" type="image/png" href="GBAL2.png" />
     <link rel="stylesheet" href="main_style.css">
 </head>
 
@@ -10,17 +12,19 @@
 <body>
     <div class="profile-container">
         <div style="display:flex; width: 100%; height: 50px;">
-            <div style="flex: 1.2;"><h1>Samuele</h1></div>
-            <div style="flex: 0.8; text-align: right;"><h1>LVL 100</h1></div>
+            <div style="flex: 1.2;"><h1 id="nametext">Samuele</h1></div>
+            <div style="flex: 0.8; text-align: right;"><h1 id="leveltext">LVL 100</h1></div>
         </div>
 
 
         <div class="exp-bar-container">
             <div class="exp-bar">
-                <span class="exp-text">EXP: 60/100</span>
+                <span class="exp-text" id="exptext">EXP: 60/100</span>
             </div>
         </div>
     </div>
+
+    <script src="manager.js"></script>
 </body>
 
 
