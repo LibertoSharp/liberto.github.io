@@ -67,6 +67,9 @@ async function getFieldValueFromJSON(fieldName) {
 
 var EXP = getFieldValueFromJSON('EXP')
 
+console.log(EXP);
+
+
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
 document.getElementById('exptext').textContent = "EXP:" + getLevelEXP(EXP) + "/" + getMaxEXP(EXP);
