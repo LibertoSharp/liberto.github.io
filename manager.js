@@ -56,12 +56,12 @@ async function getFieldValueFromJSON(fieldName) {
 
       response.json().then(jsonfile => 
         {
-          return jsonfile[fieldName];
+          console.log(jsonfile[fieldName]);
         });
     })
 }
 
-console.log(getFieldValueFromJSON('EXP'));
+//console.log(getFieldValueFromJSON('EXP'));
 
 
 document.getElementById('nametext').textContent =  username;
