@@ -47,33 +47,34 @@ function getLevel(exp) {
 
 
 
-function getFieldValueFromJSON(fieldName) {
-    try {
-        // Effettua una richiesta per ottenere il file JSON
-        var response = fetch("users/" + username + '.json');
+async function getFieldValueFromJSON(fieldName) {
+  try {
+      // Effettua una richiesta per ottenere il file JSON
+      const response = await fetch("users/" + username + '.json');
 
-        // Controlla se la richiesta ha avuto successo
-        if (!response.ok) {
-            throw new Error('Errore nel recupero del file JSON' + response.error);
-        }
+      // Controlla se la richiesta ha avuto successo
+      if (!response.ok) {
+          throw new Error('Errore nel recupero del file JSON');
+      }
 
-        // Estrai i dati JSON dalla risposta
-        const jsonData = response.json();
+      // Estrai i dati JSON dalla risposta
+      const jsonData = await response.json();
 
-        // Verifica se il campo richiesto esiste nel JSON
-        if (fieldName in jsonData) {
-            // Ritorna il valore del campo richiesto
-            return jsonData[fieldName];
-        } else {
-            throw new Error('Il campo specificato non esiste nel file JSON');
-        }
-    } catch (error) {
-        console.error('Si è verificato un errore:', error);
-        return null; // Ritorna null in caso di errore
-    }
+      // Verifica se il campo richiesto esiste nel JSON
+      if (fieldName in jsonData) {
+          // Ritorna il valore del campo richiesto
+          return jsonData[fieldName];
+      } else {
+          throw new Error('Il campo specificato non esiste nel file JSON');
+      }
+  } catch (error) {
+      console.error('Si è verificato un errore:', error);
+      return null; // Ritorna null in caso di errore
+  }
 }
 
-var EXP = getFieldValueFromJSON("EXP");
+
+var EXP = await getFieldValueFromJSON("EXP");
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
