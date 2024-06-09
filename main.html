@@ -9,7 +9,7 @@
 </head>
 
 
-<body>
+<body onclick="play2()">
     <div class="profile-container">
         <div style="display:flex; width: 100%; height: 50px;">
             <div style="flex: 1.2;"><h1 id="nametext">Samuele</h1></div>
@@ -18,8 +18,8 @@
 
 
         <div class="exp-bar-container">
-            <div class="exp-bar" id="expbar">
-                <span class="exp-text" id="exptext">EXP: 60/100</span>
+            <div class="exp-bar" id="expbar" onmouseover="showText()" onmouseout="hideText()">
+                <span class="exp-text hidetext" id="exptext">EXP: 60/100</span>
             </div>
         </div>
     </div>

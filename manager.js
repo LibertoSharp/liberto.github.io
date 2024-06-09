@@ -1,3 +1,20 @@
+var audio2 = new Audio("click2_sound.mp3");
+
+function play2() {
+  audio2.play();
+}
+
+function showText() {
+  document.getElementById('exptext').classList.remove("hidetext");
+  document.getElementById('exptext').classList.add("showtext");
+}
+
+function hideText() {
+  document.getElementById('exptext').classList.remove("showtext");
+  document.getElementById('exptext').classList.add("hidetext");
+}
+
+
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -62,5 +79,21 @@ document.getElementById('expbar').style.width = (getLevelEXP(EXP)*100)/getMaxEXP
 
 SetEXP();
 
+document.addEventListener('DOMContentLoaded', () => {
+  const cursor = document.createElement('div');
+  cursor.classList.add('cursor');
+  document.body.appendChild(cursor);
+
+  document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+  });
+
+  document.addEventListener('mousedown', () => {
+      cursor.style.animation = 'none'; // Reset animation
+      cursor.offsetHeight; // Trigger reflow
+      cursor.style.animation = ''; // Start animation
+  });
+});
 
 
