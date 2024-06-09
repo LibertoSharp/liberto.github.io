@@ -58,18 +58,15 @@ async function getFieldValueFromJSON(fieldName) {
 
       response.json().then(jsonfile => 
         {
+          console.log(jsonfile);
           field = JSON.parse(jsonfile).EXP;
         });
     })
 
-    console.log(field);
     return field;
 }
 
 var EXP = getFieldValueFromJSON('EXP')
-
-
-    console.log(EXP);
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
