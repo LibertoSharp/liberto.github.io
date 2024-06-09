@@ -61,11 +61,8 @@ async function getFieldValueFromJSON(fieldName) {
     })
 }
 
-var EXP;
-getFieldValueFromJSON('EXP')
-    .then(valore => {
-       EXP = valore;
-    })
+var EXP = getFieldValueFromJSON('EXP')
+
 
     console.log(EXP);
 
