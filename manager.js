@@ -47,7 +47,7 @@ function getLevel(exp) {
 
 
 
-async function getFieldValueFromJSON(fieldName) {
+function getFieldValueFromJSON(fieldName) {
   var field;
 
   fetch("users/" + username + ".json").then(response => 
@@ -65,7 +65,7 @@ async function getFieldValueFromJSON(fieldName) {
     return field;
 }
 
-var EXP = getFieldValueFromJSON('EXP').then(result => {return result})
+var EXP = getFieldValueFromJSON('EXP');
 
 console.log(EXP);
 
