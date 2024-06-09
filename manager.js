@@ -54,7 +54,7 @@ function getFieldValueFromJSON(fieldName) {
 
         // Controlla se la richiesta ha avuto successo
         if (!response.ok) {
-            throw new Error('Errore nel recupero del file JSON');
+            throw new Error('Errore nel recupero del file JSON' + response.error);
         }
 
         // Estrai i dati JSON dalla risposta
