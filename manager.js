@@ -22,7 +22,7 @@ function setCookie(cname, cvalue, exdays) {
 
 var username = getCookie("Username");
 
-function LevelFromEXP(exp) {
+function getLevel(exp) {
     return (25 * Math.log((exp + 750) / 750) / Math.LN2);
 }
 function getLevelEXP(exp) {
@@ -35,14 +35,6 @@ function getMaxEXP(level) {
 
 function getEXPFromLevel(level) {
   return Math.pow(2, level / 25) * 750 - 750;
-}
-
-function getLevel(exp) {
-  let level = 0;
-  while (getEXPFromLevel(level) <= exp) {
-      level++;
-  }
-  return level - 1;
 }
 
 async function getFieldValueFromJSON(fieldName) {
