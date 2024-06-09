@@ -23,7 +23,7 @@ function setCookie(cname, cvalue, exdays) {
 var username = getCookie("Username");
 
 function getLevel(exp) {
-    return (25 * Math.log((exp + 750) / 750) / Math.LN2);
+    return Math.round((25 * Math.log((exp + 750) / 750) / Math.LN2));
 }
 function getLevelEXP(exp) {
   return exp - getEXPFromLevel(getLevel(exp));
@@ -57,7 +57,7 @@ async function SetEXP() {
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = Math.round(level);
 document.getElementById('exptext').textContent = "EXP:" + Math.round(getLevelEXP(EXP)) + "/" + Math.round(getMaxEXP(level));
-document.getElementById('expbar').style.width = (getLevelEXP(EXP)*100)/getMaxEXP(level);
+document.getElementById('expbar').style.width = (getLevelEXP(EXP)*100)/getMaxEXP(level) + "%";
 }
 
 SetEXP();
