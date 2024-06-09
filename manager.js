@@ -61,19 +61,7 @@ async function getFieldValueFromJSON(fieldName) {
     })
 }
 
-function setFieldValue(fieldName, callback) {
-  getFieldValueFromJSON(fieldName).then(result => {
-    callback(result); // Chiamata alla callback con il risultato
-  }).catch(error => {
-    console.error('Error fetching the field:', error);
-  });
-}
-
-let EXP;
-setFieldValue("username", "EXP", function(value) {
-  let EXP = value; // Imposta il valore di EXP
-  console.log(EXP); // Stampa il valore di EXP
-});
+console.log(getFieldValueFromJSON("EXP"));
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
