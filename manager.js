@@ -25,6 +25,27 @@ var username = getCookie("Username");
 function LevelFromEXP(exp) {
     return (25 * Math.log((exp + 750) / 750) / Math.log(2.7182818) / Math.log(2.7182818));
 }
+function getLevelEXP(exp) {
+  return exp - getEXPFromLevel(getLevel(exp));
+}
+
+function getMaxEXP(level) {
+  return getEXPFromLevel(level + 1) - getEXPFromLevel(level);
+}
+
+function getEXPFromLevel(level) {
+  return Math.pow(2, level / 25) * 750 - 750;
+}
+
+function getLevel(exp) {
+  let level = 0;
+  while (getEXPFromLevel(level) <= exp) {
+      level++;
+  }
+  return level - 1;
+}
+
+
 
 function getFieldValueFromJSON(fieldName) {
     try {
@@ -56,5 +77,5 @@ var EXP = getFieldValueFromJSON("EXP");
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
-document.getElementById('exptext').textContent = EXP;
-//document.getElementById('exptext').style.width = 
+document.getElementById('exptext').textContent = "EXP:" + getLevelEXP(exp) + "/" + getMaxEXP(exp);
+document.getElementById('expbar').style.width = (getLevelEXP(exp)*100)/getMaxEXP(exp);
