@@ -52,7 +52,7 @@ async function getFieldValueFromJSON(fieldName) {
 async function SetEXP() {
   var EXP = await getFieldValueFromJSON("EXP");
 
-  var level = LevelFromEXP(EXP);
+  var level = getLevel(EXP);
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = Math.round(level);
