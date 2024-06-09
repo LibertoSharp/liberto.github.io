@@ -55,7 +55,7 @@ async function SetEXP() {
   var level = getLevel(EXP);
 
 document.getElementById('nametext').textContent =  username;
-document.getElementById('leveltext').textContent = Math.round(level);
+document.getElementById('leveltext').textContent = level;
 document.getElementById('exptext').textContent = "EXP:" + Math.round(getLevelEXP(EXP)) + "/" + Math.round(getMaxEXP(level));
 document.getElementById('expbar').style.width = (getLevelEXP(EXP)*100)/getMaxEXP(level) + "%";
 }
