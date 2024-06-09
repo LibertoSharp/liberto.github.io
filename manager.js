@@ -61,7 +61,7 @@ async function getFieldValueFromJSON(fieldName) {
     })
 }
 
-//console.log(getFieldValueFromJSON('EXP'));
+getFieldValueFromJSON('EXP');
 
 
 document.getElementById('nametext').textContent =  username;
