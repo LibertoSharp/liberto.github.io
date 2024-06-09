@@ -60,10 +60,12 @@ async function getFieldValueFromJSON(fieldName) {
 async function SetEXP() {
   var EXP = await getFieldValueFromJSON("EXP");
 
+  var level = LevelFromEXP(EXP);
+
 document.getElementById('nametext').textContent =  username;
-document.getElementById('leveltext').textContent = Math.round(LevelFromEXP(EXP));
-document.getElementById('exptext').textContent = "EXP:" + Math.round(getLevelEXP(EXP)) + "/" + Math.round(getMaxEXP(EXP));
-document.getElementById('expbar').style.width = (getLevelEXP(EXP)*100)/getMaxEXP(EXP);
+document.getElementById('leveltext').textContent = Math.round(level);
+document.getElementById('exptext').textContent = "EXP:" + Math.round(getLevelEXP(EXP)) + "/" + Math.round(getMaxEXP(level));
+document.getElementById('expbar').style.width = (getLevelEXP(EXP)*100)/getMaxEXP(level);
 }
 
 SetEXP();
