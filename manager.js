@@ -77,5 +77,5 @@ var EXP = getFieldValueFromJSON("EXP");
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
-document.getElementById('exptext').textContent = "EXP:" + getLevelEXP(exp) + "/" + getMaxEXP(exp);
-document.getElementById('expbar').style.width = (getLevelEXP(exp)*100)/getMaxEXP(exp);
+document.getElementById('exptext').textContent = "EXP:" + getLevelEXP(EXP) + "/" + getMaxEXP(EXP);
+document.getElementById('expbar').style.width = (getLevelEXP(EXP)*100)/getMaxEXP(EXP);
