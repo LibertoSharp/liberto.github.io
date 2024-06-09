@@ -1,5 +1,5 @@
 var audio2 = new Audio("click2_sound.mp3");
-
+let level;
 function play2() {
   audio2.play();
 }
@@ -12,6 +12,17 @@ function showText() {
 function hideText() {
   document.getElementById('exptext').classList.remove("showtext");
   document.getElementById('exptext').classList.add("hidetext");
+}
+
+function ClaimPrize() {
+  if (level <= 100) {
+    var lock = document.getElementById('lock ');
+    lock.classList.remove("hidden");
+    lock.classList.remove("lock");
+    lock.classList.add("hidden");
+    lock.classList.add("lock");
+    return;
+  }
 }
 
 
@@ -69,7 +80,7 @@ async function getFieldValueFromJSON(fieldName) {
 async function SetEXP() {
   var EXP = await getFieldValueFromJSON("EXP");
 
-  var level = getLevel(EXP);
+  level = getLevel(EXP);
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = level;
