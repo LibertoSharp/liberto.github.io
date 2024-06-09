@@ -58,7 +58,7 @@ async function getFieldValueFromJSON(fieldName) {
 
       response.json().then(jsonfile => 
         {
-          field = jsonfile.EXP;
+          field = JSON.parse(jsonfile).EXP;
         });
     })
 
