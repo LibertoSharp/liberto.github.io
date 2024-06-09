@@ -15,14 +15,14 @@ function hideText() {
 }
 
 function ClaimPrize() {
-  if (level <= 100) {
-    var lock = document.getElementById('lock ');
-    lock.classList.remove("hidden");
-    lock.classList.remove("lock");
-    lock.classList.add("hidden");
-    lock.classList.add("lock");
+  //if (level <= 100) {
+    var lock = document.getElementById('lock');
+    lock.classList.remove();
+    //lock.classList.add("hidden");
+    //lock.classList.add("lock");
+    
     return;
-  }
+  //}
 }
 
 
