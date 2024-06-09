@@ -58,7 +58,7 @@ async function getFieldValueFromJSON(fieldName) {
 
       response.json().then(jsonfile => 
         {
-          console.log(jsonfile[EXP]);
+          console.log(jsonfile.fieldName);
         });
     })
 
