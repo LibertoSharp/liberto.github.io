@@ -62,6 +62,7 @@ async function getFieldValueFromJSON(fieldName) {
         });
     })
 
+    console.log(field);
     return field;
 }
 
