@@ -79,6 +79,7 @@ getFieldValueFromJSON('EXP')
        EXP = valore;
     })
 
+    console.log(EXP);
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
