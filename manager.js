@@ -65,7 +65,7 @@ async function getFieldValueFromJSON(fieldName) {
     return field;
 }
 
-var EXP = getFieldValueFromJSON('EXP')
+var EXP = getFieldValueFromJSON('EXP').then(result => {return result})
 
 console.log(EXP);
 
