@@ -61,3 +61,22 @@ h1 {
 button:hover {
     cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/black-purple-stroke-gradient-animated/black-purple-stroke-gradient-animated-pointer-32x32.png), auto;
 }
+
+.icon {
+    transform: scale(1);
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    transition: 0.3s;
+    cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/black-purple-stroke-gradient-animated/black-purple-stroke-gradient-animated-pointer-32x32.png), auto;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    margin: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
