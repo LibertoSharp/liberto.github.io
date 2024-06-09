@@ -63,8 +63,8 @@ async function SetEXP() {
   console.log(EXP);
 
 document.getElementById('nametext').textContent =  username;
-document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
-document.getElementById('exptext').textContent = "EXP:" + getLevelEXP(EXP) + "/" + getMaxEXP(EXP);
+document.getElementById('leveltext').textContent = Math.round(LevelFromEXP(EXP));
+document.getElementById('exptext').textContent = "EXP:" + Math.round(getLevelEXP(EXP)) + "/" + Math.round(getMaxEXP(EXP));
 document.getElementById('expbar').style.width = (getLevelEXP(EXP)*100)/getMaxEXP(EXP);
 }
 
