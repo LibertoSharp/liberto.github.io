@@ -1,7 +1,12 @@
 var audio = new Audio("click_sound.mp3");
+var audio2 = new Audio("click2_sound.mp3");
 
 function play() {
   audio.play();
+}
+
+function play2() {
+  audio2.play();
 }
 
 // Funzione per controllare le credenziali
