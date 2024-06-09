@@ -48,20 +48,18 @@ function getLevel(exp) {
 
 
 async function getFieldValueFromJSON(fieldName) {
-  fetch("users/" + username + ".json").then(response => 
-    {
+  var response = await fetch("users/" + username + ".json")
+
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
 
-      response.json().then(jsonfile => 
-        {
-          return jsonfile[fieldName];
-        });
-    })
+      jsonfile = await response.json();
+        
+      return jsonfile[fieldName];
 }
 
-console.log(getFieldValueFromJSON("EXP"));
+getFieldValueFromJSON("EXP").then(result => {console.log(result);})
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
