@@ -23,7 +23,7 @@ function setCookie(cname, cvalue, exdays) {
 var username = getCookie("Username");
 
 function LevelFromEXP(exp) {
-    return (25 * Math.log((exp + 750) / 750) / Math.log(2.7182818) / Math.log(2.7182818));
+    return (25 * Math.log((exp + 750) / 750) / Math.LN2);
 }
 function getLevelEXP(exp) {
   return exp - getEXPFromLevel(getLevel(exp));
@@ -59,8 +59,6 @@ async function getFieldValueFromJSON(fieldName) {
 
 async function SetEXP() {
   var EXP = await getFieldValueFromJSON("EXP");
-
-  console.log(EXP);
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = Math.round(LevelFromEXP(EXP));
