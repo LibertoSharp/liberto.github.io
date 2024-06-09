@@ -1,3 +1,9 @@
+var audio = new Audio("click_sound.mp3");
+
+function play() {
+  audio.play();
+}
+
 // Funzione per controllare le credenziali
 function checkCredentials() {
   var username = document.querySelector('input[name="Username"]').value;
