@@ -50,7 +50,7 @@ function getLevel(exp) {
 function getFieldValueFromJSON(fieldName) {
     try {
         // Effettua una richiesta per ottenere il file JSON
-        const response = fetch("users/" + username + ".json");
+        var response = fetch("users/" + username + '.json');
 
         // Controlla se la richiesta ha avuto successo
         if (!response.ok) {
