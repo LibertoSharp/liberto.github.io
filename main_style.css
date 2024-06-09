@@ -113,14 +113,13 @@ height: 90px;
 top:-10%;
 left: 37.5%;
 animation: shake 0.5s;
-animation-iteration-count: 2;
+animation-iteration-count: infinite;
 opacity: 1;
 }
 
 .hidden {
     opacity: 0;
     transition-duration: 0.3s;
-    transition-delay: 0.7s;
 }
 
 .disabledLock {
@@ -130,8 +129,6 @@ width: 70px;
 height: 90px;
 top:-10%;
 left: 37.5%;
-animation: shake 0.5s;
-animation-iteration-count: 2;
 }
 
 @keyframes shake {

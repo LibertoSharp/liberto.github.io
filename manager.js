@@ -17,9 +17,14 @@ function hideText() {
 function ClaimPrize() {
   //if (level <= 100) {
     var lock = document.getElementById('lock');
-    lock.classList.remove();
-    //lock.classList.add("hidden");
-    //lock.classList.add("lock");
+    lock.className = "";
+    lock.classList.add("lock");
+    setTimeout(function (){
+  
+      lock.classList.add("hidden");    
+    }, 1000);
+
+
     
     return;
   //}
