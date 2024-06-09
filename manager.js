@@ -3,7 +3,7 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
+}
   function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -18,7 +18,7 @@ function setCookie(cname, cvalue, exdays) {
       }
     }
     return "";
-  }
+}
 
 var username = getCookie("Username");
 
@@ -45,8 +45,6 @@ function getLevel(exp) {
   return level - 1;
 }
 
-
-
 async function getFieldValueFromJSON(fieldName) {
   var response = await fetch("users/" + username + ".json")
 
@@ -59,12 +57,18 @@ async function getFieldValueFromJSON(fieldName) {
       return jsonfile[fieldName];
 }
 
-let EXP
-getFieldValueFromJSON("EXP").then(result => {EXP = result; console.log(EXP);})
+async function SetEXP() {
+  var EXP = await getFieldValueFromJSON("EXP");
 
-console.log(EXP);
+  console.log(EXP);
 
 document.getElementById('nametext').textContent =  username;
 document.getElementById('leveltext').textContent = LevelFromEXP(EXP);
 document.getElementById('exptext').textContent = "EXP:" + getLevelEXP(EXP) + "/" + getMaxEXP(EXP);
 document.getElementById('expbar').style.width = (getLevelEXP(EXP)*100)/getMaxEXP(EXP);
+}
+
+SetEXP();
+
+
+
