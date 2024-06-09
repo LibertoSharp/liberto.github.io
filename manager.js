@@ -62,10 +62,12 @@ async function getFieldValueFromJSON(fieldName) {
         });
     })
 
+    console.log(field);
+
     return field;
 }
 
-getFieldValueFromJSON('EXP').then(exp => console.log(exp));
+var EXP = getFieldValueFromJSON('EXP').then(exp => exp);
 
 
 document.getElementById('nametext').textContent =  username;
