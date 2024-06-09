@@ -54,7 +54,7 @@ async function getFieldValueFromJSON(fieldName) {
         throw new Error('Network response was not ok');
       }
 
-      console.log(response.json());
+      response.json().then(jsonfile => console.log(jsonfile));
     })
 }
 
